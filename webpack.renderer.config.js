@@ -6,8 +6,10 @@ rules.push({
 });
 
 module.exports = {
-  // Put your normal webpack config below here
-  module: {
-    rules,
+  resolve: {
+    fallback: {
+      path: require.resolve('path-browserify'),
+      fs: false, // Disable fs in renderer
+    },
   },
 };
