@@ -3,10 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <title>Meeting Alert App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #007bff;
+    }
+    .form-group {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px 5px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <h1>Meeting Alert App</h1>
+  <div class="form-group">
+    <label for="triggers">Trigger Words (comma-separated, e.g., "John Doe, attendance"):</label>
+    <input type="text" id="triggers" placeholder="Enter your name or phrases">
+  </div>
+  <div class="form-group">
+    <label for="ntfy-topic">Notification Topic (for ntfy app):</label>
+    <input type="text" id="ntfy-topic" placeholder="my-meeting-alerts">
+  </div>
+  <button id="save-settings">Save Settings</button>
   <button id="start">Start Monitoring</button>
+  <button id="stop">Stop Monitoring</button>
   <div id="status">Status: Idle</div>
 </body>
 </html>
